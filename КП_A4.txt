@@ -10,12 +10,12 @@ void main() {
     case 1:
     {
         short int i, Count = 0, C[17];
-        char A[17], B[9];
+        signed char A[17], B[9];
         int input;
         printf("Input array A: ");
         for (i = 0; i < 16; i++) {
             scanf("%d", &input);
-            A[i] = (char)input;
+            A[i] = (signed char)input;
         }
         printf("Array A before: ");
         for (i = 0; i < 16; i++) {
@@ -40,9 +40,10 @@ void main() {
             mov[esi], byte ptr 0; // заменяем его нулем
             add ebx, 4; // ebx = ebx + 4
             inc edi; // edi = edi + 1
+            inc esi; // esi = esi + 1
             inc[Count]; // Count = Count + 1
         L:
-            add esi, 2; // esi = esi + 2
+            inc esi; // esi = esi + 1
             loop BEG // ecx = ecx - 1
         }
         if (B != NULL) {
@@ -93,9 +94,10 @@ void main() {
             mov[esi], word ptr 0;
             add ebx, 4;
             add edi, 2;
+            add esi, 2;
             inc[Count];
         LO:
-            add esi, 4;
+            add esi, 2;
             loop BEGIN 
         }
         if (B != NULL) {
