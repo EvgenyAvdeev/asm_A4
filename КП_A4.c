@@ -26,7 +26,7 @@ void main() {
             lea esi, [A]; // берём начальный адрес(смещение) массива А 
             lea edi, [B]; // берём начальный адрес(смещение) массива В
             lea ebx, [C]; // берём начальный адрес(смещение) массива С
-            mov[Count], 0; // Count = 0
+            mov Count, 0; // Count = 0
             mov ecx, 8; // ecx = 8
         BEG:
             mov ah, [esi]; // ah = A[esi]
@@ -41,7 +41,7 @@ void main() {
             add ebx, 4; // ebx = ebx + 4
             inc edi; // edi = edi + 1
             inc esi; // esi = esi + 1
-            inc[Count]; // Count = Count + 1
+            inc Count; // Count = Count + 1
         L:
             inc esi; // esi = esi + 1
             loop BEG // ecx = ecx - 1
@@ -80,7 +80,7 @@ void main() {
             lea esi, [A];
             lea edi, [B];
             lea ebx, [C];
-            mov[Count], 0;
+            mov Count, 0;
             mov ecx, 8;
         BEGIN:
             mov dx, [esi]; 
@@ -95,7 +95,7 @@ void main() {
             add ebx, 4;
             add edi, 2;
             add esi, 2;
-            inc[Count];
+            inc Count;
         LO:
             add esi, 2;
             loop BEGIN 
